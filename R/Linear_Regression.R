@@ -74,7 +74,6 @@ for (i in colnames(insurance.data2)){
   plot(insurance.data2[ ,i], insurance.data2$Capped.losses, xlab = i, ylab = "Capped Losses")
 }
 
-
 # Lets generate a correlation plot to understand "Independent" variable to variable relationships
 windows() # open a different window for multi-purposes
 pairs(insurance.data2)
@@ -172,23 +171,3 @@ mean(abs((Actual - Prediction)/Actual))*100 # 64.98909
 
 library(forecast)
 accuracy(M2_Pred, TestData$Capped.losses)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
