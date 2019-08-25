@@ -111,8 +111,6 @@ TestData = insurance.data2[-RowNumbers, ] # TestSet
 nrow(TestData)
 nrow(TrainData)
 
-library(car)
-
 colnames(TrainData)
 # VIF Check
 M0 = lm(Capped.losses ~ ., data=TrainData)
@@ -167,7 +165,10 @@ sqrt(mean((Actual - Prediction)^2)) # 182.2344
 
 # MAPE - Mean Absolute Percentage error
 mean(abs((Actual - Prediction)/Actual))*100 # 64.98909
-############################
 
-library(forecast)
+# Using library(forecast)
 accuracy(M2_Pred, TestData$Capped.losses)
+
+# The output of accuracy()
+# ME     RMSE      MAE       MPE     MAPE
+# Test set 2.808493 178.9948 137.1624 -42.54651 66.50524
